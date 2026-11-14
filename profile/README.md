@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ef4444,50:f97316,100:eab308&height=230&section=header&text=%EC%82%B4%EB%A0%A4%EB%93%9C%EB%A6%BC&fontSize=78&fontColor=ffffff&fontAlignY=36&desc=%ED%86%B5%EC%8B%A0%EC%9D%B4%20%EC%95%88%20%EB%90%98%EB%8A%94%20%EA%B3%B3%EC%97%90%EC%84%9C%20%EC%9D%91%EA%B8%89%20%EC%B2%98%EC%B9%98%EB%A5%BC%20%EC%9D%8C%EC%84%B1%EC%9C%BC%EB%A1%9C%20%EC%95%88%EB%82%B4%ED%95%98%EB%8A%94%20%EC%98%A8%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%20%ED%82%A4%ED%8A%B8&descAlignY=58&descSize=18&animation=fadeIn" width="100%" alt="살려드림"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Noto+Sans+KR&weight=700&size=24&duration=2800&pause=900&color=F97316&center=true&vCenter=true&width=640&height=48&lines=%ED%86%B5%EC%8B%A0%EC%9D%B4+%EC%95%88+%EB%90%98%EB%8A%94+%EC%82%B0%EC%97%90%EC%84%9C%EB%8F%84;%EB%A7%90%EB%A1%9C+%EB%AC%BB%EA%B3%A0%2C+%EB%A7%90%EB%A1%9C+%EC%95%88%EB%82%B4%ED%95%A9%EB%8B%88%EB%8B%A4;%EC%9D%B8%ED%84%B0%EB%84%B7+%EC%97%86%EC%9D%B4+%ED%82%A4%ED%8A%B8+%EC%95%88%EC%97%90%EC%84%9C+%EB%AA%A8%EB%91%90+%EC%B2%98%EB%A6%AC;%EC%95%88%EB%82%B4+%EB%AC%B8%EC%9E%A5%EC%9D%80+%EA%B2%80%EC%A6%9D%ED%95%9C+%EB%A7%A4%EB%89%B4%EC%96%BC+%EC%9B%90%EB%AC%B8%EB%A7%8C" alt="통신이 안 되는 산에서도, 말로 묻고 말로 안내합니다"/>
+<img src="https://readme-typing-svg.demolab.com?font=Noto+Sans+KR&weight=700&size=24&duration=2800&pause=900&color=F97316&center=true&vCenter=true&width=640&height=48&lines=%ED%86%B5%EC%8B%A0%EC%9D%B4+%EC%95%88+%EB%90%98%EB%8A%94+%EC%82%B0%EC%97%90%EC%84%9C%EB%8F%84;%EC%9D%8C%EC%84%B1%EC%9C%BC%EB%A1%9C+%EB%AC%BB%EA%B3%A0%2C+%EC%9D%8C%EC%84%B1%EC%9C%BC%EB%A1%9C+%EC%95%88%EB%82%B4;%EC%9D%B8%ED%84%B0%EB%84%B7+%EC%97%86%EC%9D%B4+%ED%82%A4%ED%8A%B8+%EC%95%88%EC%97%90%EC%84%9C+%EB%AA%A8%EB%91%90+%EC%B2%98%EB%A6%AC;%EC%95%88%EB%82%B4+%EB%AC%B8%EC%9E%A5%EC%9D%80+%EB%A7%A4%EB%89%B4%EC%96%BC+DB+%EC%9B%90%EB%AC%B8+%EA%B7%B8%EB%8C%80%EB%A1%9C" alt="통신이 안 되는 산에서도, 음성으로 묻고 음성으로 안내"/>
 
 <p>
   <img src="https://img.shields.io/badge/Offline-First-ef4444?style=for-the-badge&logo=wifi&logoColor=white" alt="Offline First"/>
@@ -11,8 +11,8 @@
   <img src="https://img.shields.io/badge/Emergency_Manuals-16-22c55e?style=for-the-badge&logo=bookstack&logoColor=white" alt="16 Emergency Manuals"/>
 </p>
 
-**산, 계곡처럼 휴대폰이 터지지 않는 곳에서 사람이 쓰러졌을 때,**<br/>
-**말로 상황을 들려주면 키트가 응급 처치를 한 단계씩 소리와 화면으로 안내합니다.**
+**통신이 닿지 않는 산, 계곡에서 응급 상황 발생 시**<br/>
+**음성으로 상황을 인식하고, 응급 처치 절차를 단계별 음성과 화면으로 안내하는 온디바이스 키트**
 
 </div>
 
@@ -30,40 +30,40 @@
 
 <br/>
 
-## 🎬 이렇게 동작해요
+## 🎬 동작 데모
 
 <div align="center">
 
 <img src="https://github.com/savedream/.github-private/raw/main/profile/assets/demo.gif" width="92%" alt="살려드림 대화 데모"/>
 
-<sub>실제 절차 엔진이 낸 안내 순서를 그대로 옮겨 그린 데모 화면입니다. 시계는 7배속입니다.</sub>
+<sub>실제 절차 엔진의 안내 순서를 그대로 재현한 데모 화면 (시계 7배속)</sub>
 
 </div>
 
 <br/>
 
-## 💡 왜 만들었나요
+## 💡 개발 배경
 
 <table>
   <tr>
     <td width="50%" valign="top">
 
-### 😰 이런 상황에서
+### 😰 문제 상황
 
-- 🏔️ 산과 계곡은 **통신이 잘 안 되는 곳**이 많습니다
-- 🚑 구급대가 오기까지 **시간이 오래 걸립니다**
-- 🤷 옆에 있는 사람은 대부분 **처치 방법을 정확히 모릅니다**
-- 📱 휴대폰 검색이나 앱은 **인터넷이 있어야** 쓸 수 있습니다
+- 🏔️ 산, 계곡 등 **통신 음영 지역**에서는 신고와 정보 검색이 어려움
+- 🚑 구급대 도착까지 **긴 대기 시간**
+- 🤷 현장에 있는 일반인의 **응급 처치 지식 부족**
+- 📱 검색, 앱 등 기존 수단은 **인터넷 연결이 필수**
 
     </td>
     <td width="50%" valign="top">
 
-### 🙌 살려드림은
+### 🙌 해결 방식
 
-- 🎙️ **말로 상황을 들려주면** 알맞은 매뉴얼을 찾아 줍니다
-- 🧭 질문하고 대답을 들으며 **한 단계씩 이끌어 줍니다**
-- 🔌 음성 인식부터 안내까지 **인터넷 없이 키트 안에서** 처리합니다
-- 📍 119에 알려 줄 **현재 좌표를 소리로 읽어 줍니다**
+- 🎙️ **음성으로 상황을 인식**해 알맞은 응급 매뉴얼 자동 선택
+- 🧭 질문과 응답을 주고받으며 **처치 절차를 단계별로 안내**
+- 🔌 음성 인식부터 안내까지 **키트 내부에서 오프라인 처리**
+- 📍 119 신고에 필요한 **현재 좌표 음성 낭독**
 
     </td>
   </tr>
@@ -75,16 +75,16 @@
 
 <table>
   <tr>
-    <td align="center" width="25%">🎙️<br/><b>말로 묻고 답하기</b><br/><sub>버튼 없이 말하면 듣고<br/>"네", "아니요"로 답해요</sub></td>
-    <td align="center" width="25%">🧭<br/><b>단계별 처치 안내</b><br/><sub>16가지 응급 상황<br/>191개 안내 단계</sub></td>
-    <td align="center" width="25%">📍<br/><b>119 신고 좌표 낭독</b><br/><sub>GPS 좌표를<br/>또박또박 읽어 줘요</sub></td>
-    <td align="center" width="25%">🚨<br/><b>구조신호</b><br/><sub>주변 사람에게<br/>큰 신호음으로 알려요</sub></td>
+    <td align="center" width="25%">🎙️<br/><b>음성 대화</b><br/><sub>상시 듣기(VAD)<br/>질문 응답 인식</sub></td>
+    <td align="center" width="25%">🧭<br/><b>단계별 처치 안내</b><br/><sub>응급 상황 16종<br/>안내 단계 191개</sub></td>
+    <td align="center" width="25%">📍<br/><b>좌표 낭독</b><br/><sub>119 신고용<br/>GPS 좌표 음성 안내</sub></td>
+    <td align="center" width="25%">🚨<br/><b>구조신호</b><br/><sub>최대 음량 신호음으로<br/>주변에 위치 알림</sub></td>
   </tr>
   <tr>
-    <td align="center">⏱️<br/><b>타이머, 절차 알림</b><br/><sub>압박 2분 교대 같은<br/>시간을 대신 재요</sub></td>
-    <td align="center">🖼️<br/><b>그림 카드 매뉴얼</b><br/><sub>말하기 어려울 때<br/>화면으로 찾아봐요</sub></td>
-    <td align="center">🗂️<br/><b>처치 기록</b><br/><sub>무엇을 안내했는지<br/>구급대에 넘길 기록</sub></td>
-    <td align="center">🔁<br/><b>다시 듣기, 정정</b><br/><sub>"다시 말해 줘",<br/>"아까 잘못 말했어"</sub></td>
+    <td align="center">⏱️<br/><b>타이머, 절차 알림</b><br/><sub>경과 시간 측정<br/>2분 교대 등 절차 알림</sub></td>
+    <td align="center">🖼️<br/><b>그림 카드 매뉴얼</b><br/><sub>음성 사용이 어려울 때<br/>화면으로 처치 방법 조회</sub></td>
+    <td align="center">🗂️<br/><b>처치 기록</b><br/><sub>발화, 안내, 기기 동작<br/>시각별 저장</sub></td>
+    <td align="center">🔁<br/><b>반복, 정정</b><br/><sub>안내 다시 듣기<br/>잘못 말한 답 정정</sub></td>
   </tr>
 </table>
 
@@ -92,15 +92,15 @@
 
 <img src="https://github.com/savedream/.github-private/raw/main/profile/assets/metronome.gif" width="300" alt="가슴압박 메트로놈 110 BPM"/>
 
-<sub>❤️ 가슴압박 단계에 들어가면 메트로놈이 <b>분당 110회</b> 박자를 부저로 들려줍니다.</sub>
+<sub>❤️ 가슴압박 단계 진입 시 부저 메트로놈 <b>분당 110회</b> 자동 동작</sub>
 
 </div>
 
 <br/>
 
-## 🔁 한 턴의 흐름
+## 🔁 워크플로우
 
-말 한마디가 들어와서 안내가 나가기까지, 모든 과정이 **키트 안에서** 일어납니다.
+음성 입력부터 안내 출력까지 전 과정을 **키트 내부에서** 처리하는 구조
 
 <div align="center">
 
@@ -133,7 +133,7 @@ sequenceDiagram
 
 <br/>
 
-## 🏗️ 시스템 구성
+## 🏗️ 시스템 아키텍처
 
 ```mermaid
 flowchart LR
@@ -181,13 +181,13 @@ flowchart LR
     class MIC,SPK,BZ,GPS hw
 ```
 
-> 🌐 **실행 중에는 인터넷을 쓰지 않습니다.** 아이패드는 키트가 만든 전용 Wi-Fi로만 키트에 붙고, 마이크, 스피커, 부저, GPS는 모두 키트에 달려 있습니다.
+> 🌐 **실행 중 인터넷 미사용.** 아이패드는 키트 전용 Wi-Fi(AP)로만 연결되며, 마이크, 스피커, 부저, GPS는 모두 키트에 직접 연결
 
 <br/>
 
-## 🛡️ 안전하게 설계했어요
+## 🛡️ 안전 설계
 
-응급 처치 안내는 틀리면 안 됩니다. 그래서 **AI는 사용자의 말을 알아듣는 데만** 쓰고, **안내 문장은 직접 만들지 않습니다.**
+**AI는 사용자 발화를 정해진 형식으로 분류하는 데에만 사용**하고, **안내 문장은 생성하지 않는 구조**. 모든 안내 문장은 매뉴얼 DB 원문에서 선택
 
 ```mermaid
 flowchart TD
@@ -205,17 +205,17 @@ flowchart TD
     style R fill:#6b7280,stroke:#d1d5db,color:#fff
 ```
 
-| | 장치 | 하는 일 |
+| | 구분 | 동작 |
 |:---:|---|---|
-| ✅ | **확인 질문** | 다른 상황을 말하면 "화상 안내로 바꿀까요?"처럼 먼저 묻습니다 |
-| 🔄 | **정정** | "아까 잘못 말했어, 숨 쉬어"라고 하면 그 질문으로 돌아가 다시 안내합니다 |
-| 🫀 | **심정지 우선** | 의식과 호흡이 모두 없다고 들으면 어떤 안내 중이든 심정지 안내로 넘어갑니다 |
-| 🤫 | **무응답 처리** | 15초 동안 대답이 없으면 다시 묻고, 세 번이면 안전한 쪽으로 진행합니다 |
-| 🗂️ | **모든 기록** | 사용자 말, 키트 안내, 기기 동작을 시각과 함께 남깁니다 |
+| ✅ | **확인 질문** | 다른 상황 언급 시 매뉴얼 전환 전 확인 질문 (예: "화상 안내로 바꿀까요?") |
+| 🔄 | **정정** | 잘못 말한 답을 정정하면 해당 질문으로 돌아가 다시 분기 |
+| 🫀 | **심정지 우선** | 의식과 호흡이 모두 없으면 진행 중인 안내와 관계없이 심정지 안내로 전환 |
+| 🤫 | **무응답 처리** | 15초 무응답 시 재질문, 3회 연속 무응답 시 '모름' 분기로 진행 |
+| 🗂️ | **전체 기록** | 사용자 발화, 키트 안내, 기기 동작을 시각과 함께 저장 |
 
 <br/>
 
-## 🩺 다루는 응급 상황
+## 🩺 지원 응급 상황
 
 <table>
   <tr>
@@ -261,7 +261,7 @@ pie showData
 
 <br/>
 
-## 🫀 예시: 심정지 안내 흐름
+## 🫀 안내 흐름 예시: 심정지
 
 ```mermaid
 flowchart TD
@@ -294,7 +294,7 @@ flowchart TD
     style N fill:#14b8a6,color:#fff,stroke:#5eead4
 ```
 
-> 💡 압박하는 도중에 "숨을 쉬기 시작했어요"라고 말하면 2분을 기다리지 않고 바로 회복 확인 질문으로 넘어갑니다.
+> 💡 가슴압박 중 회복 신호(호흡, 움직임, 의식) 감지 시 2분 대기 없이 즉시 회복 확인 질문으로 이동
 
 <br/>
 
