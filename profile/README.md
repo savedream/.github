@@ -363,5 +363,3 @@ timeline
 </table>
 
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:eab308,50:f97316,100:ef4444&height=130&section=footer&text=%ED%95%9C%20%EC%82%AC%EB%9E%8C%EC%9D%B4%EB%9D%BC%EB%8F%84%20%EB%8D%94%20%EC%82%B4%EB%A6%B4%20%EC%88%98%20%EC%9E%88%EA%B2%8C&fontSize=24&fontColor=ffffff&fontAlignY=68" width="100%" alt="한 사람이라도 더 살릴 수 있게"/>
