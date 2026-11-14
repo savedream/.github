@@ -18,6 +18,18 @@
 
 <br/>
 
+## 🧰 기술 스택
+
+| 분야 | 기술 |
+|:---:|:---|
+| 🔙 **Backend** | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/> <img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic"/> <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/> <img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/><br/><sub>FastAPI 서버, 매뉴얼 DB v1.7 절차 엔진 (상황 매뉴얼 16, 공통 절차 4), SQLite 처치 기록</sub> |
+| 📱 **Frontend** | <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native"/> <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/> <img src="https://img.shields.io/badge/iPad-000000?style=for-the-badge&logo=apple&logoColor=white" alt="iPad"/> |
+| 🧠 **AI, Voice** | <img src="https://img.shields.io/badge/Llama_3.2_1B-0467DF?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3.2 1B"/> <img src="https://img.shields.io/badge/LoRA-8B5CF6?style=for-the-badge" alt="LoRA"/> <img src="https://img.shields.io/badge/sherpa--onnx-005CED?style=for-the-badge&logo=onnx&logoColor=white" alt="sherpa-onnx"/> <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/><br/><sub>silero VAD, SenseVoice STT, Llama-3.2-1B + LoRA 발화 해석 (6가지 함수 호출 형식), VITS TTS</sub> |
+| 🔗 **통신** | <img src="https://img.shields.io/badge/REST_API-6366F1?style=for-the-badge" alt="REST API"/> <img src="https://img.shields.io/badge/SSE_Event_Stream-14B8A6?style=for-the-badge" alt="SSE"/><br/><sub>키트 전용 Wi-Fi로 키트 ↔ 아이패드 연결</sub> |
+| 🔩 **Hardware** | <img src="https://img.shields.io/badge/Qualcomm_QCS6490-3253DC?style=for-the-badge&logo=qualcomm&logoColor=white" alt="Qualcomm QCS6490"/> <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/> |
+
+<br/>
+
 ## 🎬 이렇게 동작해요
 
 <div align="center">
@@ -297,45 +309,6 @@ timeline
     11월 5일 : 말하기, 마이크 API : 전원 종료, 기기 상태 API : 실제 모델 연결 : 프론트 개발용 도커
     다음 단계 : 키트 연동 (NPU, 오디오, GPS) : 현장 시험
 ```
-
-<br/>
-
-## 🧰 기술 스택
-
-<div align="center">
-
-**🔙 Backend**<br/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic"/>
-<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
-<img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest"/>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
-
-**📱 Frontend**<br/>
-<img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native"/>
-<img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-<img src="https://img.shields.io/badge/iPad-000000?style=for-the-badge&logo=apple&logoColor=white" alt="iPad"/>
-
-**🧠 AI, Voice**<br/>
-<img src="https://img.shields.io/badge/Llama_3.2_1B-0467DF?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3.2 1B"/>
-<img src="https://img.shields.io/badge/LoRA-8B5CF6?style=for-the-badge" alt="LoRA"/>
-<img src="https://img.shields.io/badge/sherpa--onnx-005CED?style=for-the-badge&logo=onnx&logoColor=white" alt="sherpa-onnx"/>
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
-
-**🔩 Hardware**<br/>
-<img src="https://img.shields.io/badge/Qualcomm_QCS6490-3253DC?style=for-the-badge&logo=qualcomm&logoColor=white" alt="Qualcomm QCS6490"/>
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
-
-</div>
-
-| 영역 | 사용 기술 |
-|---|---|
-| 🎧 음성 | silero VAD, SenseVoice STT, VITS TTS (sherpa-onnx) |
-| 🧠 발화 해석 | Llama-3.2-1B + LoRA, 6가지 함수 호출 형식 |
-| 🧭 안내 | 매뉴얼 DB v1.7을 해석하는 절차 엔진 (상황 매뉴얼 16, 공통 절차 4) |
-| 🔗 통신 | REST API, SSE 이벤트 스트림 (키트 ↔ 아이패드) |
 
 <br/>
 
