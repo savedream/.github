@@ -75,10 +75,11 @@
 
 <table>
   <tr>
-    <td align="center" width="25%">🎙️<br/><b>음성 대화</b><br/><sub>상시 듣기(VAD)<br/>질문 응답 인식</sub></td>
-    <td align="center" width="25%">🧭<br/><b>단계별 처치 안내</b><br/><sub>응급 상황 16종<br/>안내 단계 191개</sub></td>
-    <td align="center" width="25%">📍<br/><b>좌표 낭독</b><br/><sub>119 신고용<br/>GPS 좌표 음성 안내</sub></td>
-    <td align="center" width="25%">🚨<br/><b>구조신호</b><br/><sub>최대 음량 신호음으로<br/>주변에 위치 알림</sub></td>
+    <td align="center" width="19%">🎙️<br/><b>음성 대화</b><br/><sub>상시 듣기(VAD)<br/>질문 응답 인식</sub></td>
+    <td align="center" width="19%">🧭<br/><b>단계별 처치 안내</b><br/><sub>응급 상황 16종<br/>안내 단계 191개</sub></td>
+    <td align="center" width="19%">📍<br/><b>좌표 낭독</b><br/><sub>119 신고용<br/>GPS 좌표 음성 안내</sub></td>
+    <td align="center" width="19%">🚨<br/><b>구조신호</b><br/><sub>최대 음량 신호음으로<br/>주변에 위치 알림</sub></td>
+    <td align="center" width="24%" rowspan="2"><img src="https://github.com/savedream/.github-private/raw/main/profile/assets/metronome.gif" width="210" alt="가슴압박 메트로놈 110 BPM"/><br/><sub>❤️ 가슴압박 단계 진입 시<br/>부저 메트로놈 <b>분당 110회</b> 자동 동작</sub></td>
   </tr>
   <tr>
     <td align="center">⏱️<br/><b>타이머, 절차 알림</b><br/><sub>경과 시간 측정<br/>2분 교대 등 절차 알림</sub></td>
@@ -87,14 +88,6 @@
     <td align="center">🔁<br/><b>반복, 정정</b><br/><sub>안내 다시 듣기<br/>잘못 말한 답 정정</sub></td>
   </tr>
 </table>
-
-<div align="center">
-
-<img src="https://github.com/savedream/.github-private/raw/main/profile/assets/metronome.gif" width="300" alt="가슴압박 메트로놈 110 BPM"/>
-
-<sub>❤️ 가슴압박 단계 진입 시 부저 메트로놈 <b>분당 110회</b> 자동 동작</sub>
-
-</div>
 
 <br/>
 
@@ -108,27 +101,37 @@
 
 </div>
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor U as 🙋 사용자
-    participant M as 🎙️ 마이크 (VAD)
-    participant S as 📝 STT
-    participant L as 🧠 모델
-    participant E as 🧭 절차 엔진
-    participant P as 🔊 스피커
-    participant T as 📱 아이패드 화면
+음성, 화면 버튼, 타이머 등 모든 입력이 **절차 엔진 한 곳**을 거쳐 안내와 기기 동작으로 이어지는 흐름
 
-    U->>M: "사람이 쓰러졌는데 숨을 안 쉬어"
-    M-->>T: speech.state (말하는 중)
-    M->>S: 말소리 구간
-    S->>L: 정규화한 문장
-    L->>E: report_situation (situation=1, breathing=0)
-    Note over E: 매뉴얼 DB에서<br/>EM-01 심정지 의심 시작
-    E->>P: "심정지가 의심됩니다."
-    E-->>T: guide.step, guide.say (SSE)
-    P->>U: "어깨를 두드리며 크게 불렀을 때 대답을 하나요?"
-    Note over U,T: 목표: 말이 끝나고 3초 안에 첫 안내
+```mermaid
+%%{init: {"flowchart": {"rankSpacing": 40, "nodeSpacing": 18}}}%%
+flowchart LR
+    subgraph IN["입력"]
+        V["🎙️ 음성"]
+        B["👆 화면 버튼<br/>REST API"]
+        T["⏱️ 타이머, 절차 알림"]
+    end
+    V --> P["🎧 VAD → STT → 정규화<br/>→ 모델 → 출력 파서"]
+    P --> E{{"🧭 절차 엔진<br/>매뉴얼 DB v1.7"}}
+    B --> E
+    T --> E
+    subgraph OUT["출력"]
+        O1["🔊 음성 안내 (TTS)"]
+        O2["📱 화면 갱신 (SSE)"]
+        O3["❤️ 기기 제어"]
+        O4["🗂️ 처치 기록 저장"]
+    end
+    E --> O1
+    E --> O2
+    E --> O3
+    E --> O4
+
+    classDef inp fill:#1e3a8a,stroke:#60a5fa,color:#fff
+    classDef eng fill:#7c2d12,stroke:#fb923c,color:#fff
+    classDef outp fill:#14532d,stroke:#4ade80,color:#fff
+    class V,B,T inp
+    class P,E eng
+    class O1,O2,O3,O4 outp
 ```
 
 <br/>
@@ -136,49 +139,43 @@ sequenceDiagram
 ## 🏗️ 시스템 아키텍처
 
 ```mermaid
+%%{init: {"flowchart": {"rankSpacing": 40, "nodeSpacing": 18}}}%%
 flowchart LR
-    subgraph IPAD["📱 아이패드 (React Native, Expo)"]
-        UI["🖥️ 안내 대화, 말하기<br/>긴급 매뉴얼, 타이머<br/>메트로놈, 구조신호 화면"]
-    end
+    UI["📱 아이패드 앱<br/>React Native (Expo)"]
+    MIC["🎙️ 마이크"]
+    GPS["📍 GPS"]
 
     subgraph KIT["🧰 키트 (Qualcomm QCS6490, Linux)"]
         API["⚡ FastAPI<br/>REST + SSE"]
-        subgraph VOICE["🎧 음성 파이프라인"]
-            direction LR
-            VAD["VAD"] --> STT["STT"] --> NORM["정규화"] --> LLM["Llama-3.2-1B<br/>+ LoRA"] --> PARSE["출력 파서"]
-        end
-        ENGINE["🧭 절차 엔진"]
+        VOICE["🎧 음성 파이프라인<br/>VAD, STT, 정규화<br/>Llama-3.2-1B + LoRA, 파서"]
         DB[("📚 매뉴얼 DB v1.7<br/>단계 191, 템플릿 39")]
+        ENGINE{{"🧭 절차 엔진"}}
         REC[("🗂️ 처치 기록<br/>SQLite")]
         DEV["🔌 기기 제어, TTS"]
     end
 
-    subgraph HW["🔩 키트 장치"]
-        MIC["🎙️ 마이크"]
-        SPK["🔊 스피커"]
-        BZ["❤️ 부저 (메트로놈)"]
-        GPS["📍 GPS"]
-    end
+    SPK["🔊 스피커<br/>안내 음성, 구조신호"]
+    BZ["❤️ 부저<br/>메트로놈"]
 
-    UI <-->|"키트 전용 Wi-Fi<br/>REST + SSE"| API
-    MIC --> VAD
-    PARSE --> ENGINE
+    UI <-->|"키트 전용 Wi-Fi"| API
+    MIC --> VOICE
     API --> ENGINE
+    VOICE --> ENGINE
     DB --> ENGINE
+    GPS --> ENGINE
     ENGINE --> REC
     ENGINE --> DEV
     DEV --> SPK
     DEV --> BZ
-    GPS --> ENGINE
 
-    classDef ipad fill:#1e3a8a,stroke:#60a5fa,color:#fff
+    classDef ext fill:#1e3a8a,stroke:#60a5fa,color:#fff
     classDef core fill:#7c2d12,stroke:#fb923c,color:#fff
     classDef data fill:#14532d,stroke:#4ade80,color:#fff
     classDef hw fill:#4c1d95,stroke:#a78bfa,color:#fff
-    class UI ipad
-    class API,ENGINE,DEV core
+    class UI ext
+    class API,VOICE,ENGINE,DEV core
     class DB,REC data
-    class MIC,SPK,BZ,GPS hw
+    class MIC,GPS,SPK,BZ hw
 ```
 
 > 🌐 **실행 중 인터넷 미사용.** 아이패드는 키트 전용 Wi-Fi(AP)로만 연결되며, 마이크, 스피커, 부저, GPS는 모두 키트에 직접 연결
@@ -190,13 +187,14 @@ flowchart LR
 **AI는 사용자 발화를 정해진 형식으로 분류하는 데에만 사용**하고, **안내 문장은 생성하지 않는 구조**. 모든 안내 문장은 매뉴얼 DB 원문에서 선택
 
 ```mermaid
-flowchart TD
-    A["🙋 사용자의 말<br/>'아니요 숨을 안 쉬어요'"] --> B["🧠 모델<br/>6가지 함수 중 하나와<br/>관찰값 5개로만 분류"]
-    B --> C{"🔍 출력 파서<br/>형식, 값 범위 검사"}
-    C -->|통과| D["🧭 절차 엔진<br/>매뉴얼 DB 분기 규칙대로<br/>다음 단계 결정"]
-    C -->|실패| R["🔁 '다시 한번 말해 주세요'<br/>단계는 그대로"]
-    D --> E["📚 매뉴얼 DB 원문 그대로<br/>안내 문장 선택"]
+%%{init: {"flowchart": {"rankSpacing": 36, "nodeSpacing": 18}}}%%
+flowchart LR
+    A["🙋 사용자 발화"] --> B["🧠 모델<br/>함수 6종, 관찰값 5개로 분류"]
+    B --> C{"🔍 출력 파서<br/>형식, 범위 검사"}
+    C -->|통과| D["🧭 절차 엔진<br/>분기 규칙으로 다음 단계 결정"]
+    D --> E["📚 매뉴얼 DB 원문<br/>안내 문장 선택"]
     E --> F["🔊 음성 + 📱 화면 안내"]
+    C -->|실패| R["🔁 재질문<br/>단계 유지"]
 
     style B fill:#f97316,stroke:#fdba74,color:#fff
     style C fill:#eab308,stroke:#fde047,color:#000
@@ -219,24 +217,20 @@ flowchart TD
 
 <table>
   <tr>
-    <td align="center">🫀<br/><b>심정지 의심</b></td>
-    <td align="center">😮‍💨<br/><b>기도폐쇄</b></td>
-    <td align="center">🦴<br/><b>골절, 염좌</b></td>
-    <td align="center">🩸<br/><b>심한 출혈</b></td>
-  </tr>
-  <tr>
-    <td align="center">🧠<br/><b>머리, 목, 허리 손상</b></td>
-    <td align="center">🔥<br/><b>화상</b></td>
-    <td align="center">🥶<br/><b>저체온증</b></td>
-    <td align="center">🥵<br/><b>온열질환, 탈진</b></td>
+    <td align="center" width="12.5%">🫀<br/><b>심정지 의심</b></td>
+    <td align="center" width="12.5%">😮‍💨<br/><b>기도폐쇄</b></td>
+    <td align="center" width="12.5%">🦴<br/><b>골절, 염좌</b></td>
+    <td align="center" width="12.5%">🩸<br/><b>심한 출혈</b></td>
+    <td align="center" width="12.5%">🧠<br/><b>머리, 목, 허리 손상</b></td>
+    <td align="center" width="12.5%">🔥<br/><b>화상</b></td>
+    <td align="center" width="12.5%">🥶<br/><b>저체온증</b></td>
+    <td align="center" width="12.5%">🥵<br/><b>온열질환, 탈진</b></td>
   </tr>
   <tr>
     <td align="center">🐝<br/><b>벌 쏘임, 알레르기</b></td>
     <td align="center">🐍<br/><b>뱀 물림</b></td>
     <td align="center">⚡<br/><b>뇌졸중 의심</b></td>
     <td align="center">💔<br/><b>가슴통증</b></td>
-  </tr>
-  <tr>
     <td align="center">🌀<br/><b>경련 발작</b></td>
     <td align="center">🍬<br/><b>저혈당 의심</b></td>
     <td align="center">🧭<br/><b>조난, 고립</b></td>
@@ -264,30 +258,33 @@ pie showData
 ## 🫀 안내 흐름 예시: 심정지
 
 ```mermaid
-flowchart TD
-    S(["🙋 '사람이 쓰러졌는데 숨을 안 쉬어'"]) --> A{"반응 확인<br/>불렀을 때 대답하나요?"}
-    A -->|아니요| B["📞 119 신고 + AED 요청<br/>스피커폰으로"]
-    A -->|네| X["상황 불명확 평가로"]
-    B --> C["📍 현재 좌표 낭독"]
-    C --> D{"숨을 쉬나요?<br/>(이미 들었으면 건너뜀)"}
-    D -->|네| R1["🛌 회복 자세, 곁에서 재확인"]
-    D -->|아니요| E{"소아인가요?"}
-    E -->|네| K["👶 소아, 영아 압박 안내"]
-    E -->|아니요| F["✋ 가슴압박 자세<br/>가슴뼈 아래쪽 절반"]
-    F --> G["❤️ 약 5cm, 분당 100~120회<br/>메트로놈 110 켜기, 타이머 시작"]
-    G --> H["🌬️ 인공호흡 안내"]
-    K --> I
-    H --> I["⏱️ 계속 압박 (2분 알림)"]
-    I --> J{"2분마다 교대<br/>AED 도착했나요?"}
-    J -->|네| AED["⚡ AED 사용 안내"]
-    J -->|아니요| M{"움직이거나<br/>정상 호흡 회복?"}
-    AED --> M
-    M -->|아니요| I
-    M -->|네| N["⏹️ 압박 중단, 재확인<br/>메트로놈 끄기"]
+%%{init: {"flowchart": {"rankSpacing": 30, "nodeSpacing": 16}}}%%
+flowchart TB
+    subgraph P1["① 초기 평가, 신고"]
+        direction LR
+        S(["🙋 쓰러짐, 호흡 없음"]) --> A{"반응 확인"}
+        A -->|반응 있음| X["상황 불명확 평가"]
+        A -->|반응 없음| B["📞 119 신고, AED 요청<br/>📍 좌표 낭독"]
+        B --> D{"호흡 확인<br/>(이미 들었으면 생략)"}
+        D -->|정상 호흡| R1["🛌 회복 자세"]
+        D -->|호흡 없음| E{"소아 여부"}
+        E -->|소아| K["👶 소아, 영아 압박<br/>(이후 같은 루프)"]
+    end
+    subgraph P2["② 가슴압박 루프"]
+        direction LR
+        G["❤️ 압박 자세, 깊이 5cm<br/>분당 100~120회<br/>메트로놈 110, 타이머"] --> H["🌬️ 인공호흡"]
+        H --> I["⏱️ 계속 압박<br/>2분 알림"]
+        I --> J{"2분 교대<br/>AED 도착 여부"}
+        J -->|도착| AED["⚡ AED 사용"]
+        J -->|미도착| M{"호흡, 움직임<br/>회복 여부"}
+        AED --> M
+        M -->|미회복| I
+        M -->|회복| N["⏹️ 압박 중단<br/>메트로놈 끄기"]
+    end
+    P1 -->|성인| P2
 
     style S fill:#f97316,color:#fff,stroke:#fdba74
     style B fill:#ef4444,color:#fff,stroke:#fca5a5
-    style C fill:#22c55e,color:#fff,stroke:#86efac
     style G fill:#ef4444,color:#fff,stroke:#fca5a5
     style I fill:#eab308,color:#000,stroke:#fde047
     style AED fill:#3b82f6,color:#fff,stroke:#93c5fd
