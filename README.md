@@ -1,6 +1,6 @@
-# .github-private
+# .github
 
-살려드림 조직 멤버에게만 보이는 조직 프로필 저장소입니다. 조직 페이지에는 `profile/README.md`가 표시됩니다.
+살려드림 조직 프로필 저장소입니다. 조직 페이지에는 `profile/README.md`가 표시됩니다.
 
 | 경로 | 내용 |
 |---|---|
@@ -15,10 +15,10 @@
 ```bash
 # 1. Back 저장소 폴더에서 심정지 시나리오의 안내 순서를 뽑는다
 cd ../Back
-PYTHONPATH=. .venv/bin/python ../.github-private/scripts/transcript.py /tmp/transcript.json
+PYTHONPATH=. .venv/bin/python ../.github/scripts/transcript.py /tmp/transcript.json
 
 # 2. 이 저장소에서 GIF를 그린다 (Pillow 필요)
-cd ../.github-private
+cd ../.github
 python -m pip install pillow
 python scripts/make_gifs.py /tmp/transcript.json profile/assets
 ```

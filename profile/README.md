@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<img src="https://github.com/savedream/.github-private/raw/main/profile/assets/demo.gif" width="92%" alt="살려드림 대화 데모"/>
+<img src="https://github.com/savedream/.github/raw/main/profile/assets/demo.gif" width="92%" alt="살려드림 대화 데모"/>
 
 <sub>실제 절차 엔진의 안내 순서를 그대로 재현한 데모 화면 (시계 7배속)</sub>
 
@@ -79,7 +79,7 @@
     <td align="center" width="19%">🧭<br/><b>단계별 처치 안내</b><br/><sub>응급 상황 16종<br/>안내 단계 191개</sub></td>
     <td align="center" width="19%">📍<br/><b>좌표 낭독</b><br/><sub>119 신고용<br/>GPS 좌표 음성 안내</sub></td>
     <td align="center" width="19%">🚨<br/><b>구조신호</b><br/><sub>최대 음량 신호음으로<br/>주변에 위치 알림</sub></td>
-    <td align="center" width="24%" rowspan="2"><img src="https://github.com/savedream/.github-private/raw/main/profile/assets/metronome.gif" width="210" alt="가슴압박 메트로놈 110 BPM"/><br/><sub>❤️ 가슴압박 단계 진입 시<br/>부저 메트로놈 <b>분당 110회</b> 자동 동작</sub></td>
+    <td align="center" width="24%" rowspan="2"><img src="https://github.com/savedream/.github/raw/main/profile/assets/metronome.gif" width="210" alt="가슴압박 메트로놈 110 BPM"/><br/><sub>❤️ 가슴압박 단계 진입 시<br/>부저 메트로놈 <b>분당 110회</b> 자동 동작</sub></td>
   </tr>
   <tr>
     <td align="center">⏱️<br/><b>타이머, 절차 알림</b><br/><sub>경과 시간 측정<br/>2분 교대 등 절차 알림</sub></td>
@@ -97,7 +97,7 @@
 
 <div align="center">
 
-<img src="https://github.com/savedream/.github-private/raw/main/profile/assets/pipeline.gif" width="96%" alt="한 턴의 흐름"/>
+<img src="https://github.com/savedream/.github/raw/main/profile/assets/pipeline.gif" width="96%" alt="한 턴의 흐름"/>
 
 </div>
 
